@@ -13,3 +13,7 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 
 - Pass Down Search Results
 - Render Result List
+
+### Part 3
+
+-Pass Down Playlist to TrackList
