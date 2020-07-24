@@ -25,3 +25,7 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 ### Part 5
 
 - Remove Tracks from a Playlist
+
+### Part 6
+
+- Change the Name of a Playlist
