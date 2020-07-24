@@ -4,17 +4,21 @@ import "./Track.css";
 class Track extends React.Component {
   constructor(props) {
     super(props);
+    // Bind Methods
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
   }
 
+  /* Render Button */
   renderAction() {
+    // if isRemoval = true
     if (this.props.isRemoval) {
       return (
         <button className="Track-action" onClick={this.removeTrack}>
           -
         </button>
       );
+    // if isRemoval = false
     } else {
       return (
         <button className="Track-action" onClick={this.addTrack}>
@@ -24,10 +28,12 @@ class Track extends React.Component {
     }
   }
 
+  /* Add Track */
   addTrack() {
     this.props.onAdd(this.props.track);
   }
 
+  /* Remove Track */
   removeTrack() {
     this.props.onRemove(this.props.track);
   }
