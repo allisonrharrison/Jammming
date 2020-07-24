@@ -16,8 +16,12 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 
 ### Part 3
 
--Pass Down Playlist to TrackList
+- Pass Down Playlist to TrackList
 
 ### Part 4
 
--Add Tracks to a Playlist
+- Add Tracks to a Playlist
+
+### Part 5
+
+- Remove Tracks from a Playlist
