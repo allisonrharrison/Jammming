@@ -29,3 +29,7 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 ### Part 6
 
 - Change the Name of a Playlist
+
+### Part 7
+
+- Create a Method that Saves the Playlist to a User's Account
