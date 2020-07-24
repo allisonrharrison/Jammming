@@ -12,6 +12,12 @@ class App extends React.Component {
         {name: 'Kids With Guns', artist: 'Gorillaz', album: 'Demon Days', id: '0'},
         {name: '80', artist: 'Green Day', album: 'Keplunk!', id: '1'},
         {name: 'Concrete', artist: 'Poppy', album: 'I Disagree', id: '2'}
+      ],
+      playlistName: 'My Awesome Playlist',
+      playlistTracks: [
+        {name: 'White Stocking Tops', artist: 'Demented Scumcats', album: 'Splatter Baby', id: '0'},
+        {name: 'Cold Water', artist: 'Protest the Hero', album: 'Pacific Myth', id: '1'},
+        {name: 'Time', artist: 'Benny Benassi', album: 'Hypnotica', id: '2'}
       ]
     };
   }
@@ -25,7 +31,7 @@ class App extends React.Component {
           <SearchBar />
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} />
-            <Playlist />
+            <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
           </div>
         </div>
       </div>
