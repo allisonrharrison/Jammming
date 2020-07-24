@@ -15,12 +15,24 @@ class App extends React.Component {
       ],
       playlistName: 'My Awesome Playlist',
       playlistTracks: [
-        {name: 'White Stocking Tops', artist: 'Demented Scumcats', album: 'Splatter Baby', id: '0'},
-        {name: 'Cold Water', artist: 'Protest the Hero', album: 'Pacific Myth', id: '1'},
-        {name: 'Time', artist: 'Benny Benassi', album: 'Hypnotica', id: '2'}
+        {name: 'White Stocking Tops', artist: 'Demented Scumcats', album: 'Splatter Baby', id: '3'},
+        {name: 'Cold Water', artist: 'Protest the Hero', album: 'Pacific Myth', id: '4'},
+        {name: 'Time', artist: 'Benny Benassi', album: 'Hypnotica', id: '5'}
       ]
-    };
+    }
+    this.addTrack = this.addTrack.bind(this);
   }
+
+  addTrack(track) {
+    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+      return;
+    } else {
+      this.setState(prevState => ({
+        playlistTracks: [...prevState.playlistTracks, {name: track.name, artist: track.artist, album: track.album, id: track.id}]
+      }))
+    }
+  }
+
   render() {
     return (
       <div>
@@ -30,7 +42,7 @@ class App extends React.Component {
         <div className="App">
           <SearchBar />
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} />
+            <SearchResults searchResults={this.state.searchResults} onAdd={this.addTrack}/>
             <Playlist playlistName={this.state.playlistName} playlistTracks={this.state.playlistTracks} />
           </div>
         </div>
