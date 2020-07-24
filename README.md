@@ -8,3 +8,8 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 
 - Create React App, Initialize Repository
 - Create and Style Base Project & Components
+
+### Part 2
+
+- Pass Down Search Results
+- Render Result List
