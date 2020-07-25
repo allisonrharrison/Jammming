@@ -49,3 +49,8 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 ### Part 11
 
 - Save a User's Playlist
+
+### Part 12
+
+- Deploy to Surge.sh
+- Update Redirect URI
