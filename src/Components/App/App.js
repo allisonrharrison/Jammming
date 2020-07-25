@@ -3,25 +3,18 @@ import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
+import Spotify from "../../util/Spotify";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // Search Results
-      searchResults: [
-        {name: 'Kids With Guns', artist: 'Gorillaz', album: 'Demon Days', id: '0'},
-        {name: '80', artist: 'Green Day', album: 'Keplunk!', id: '1'},
-        {name: 'Concrete', artist: 'Poppy', album: 'I Disagree', id: '2'}
-      ],
+      searchResults: [],
       // Playlist Name
       playlistName: '',
       // Playlist Tracks
-      playlistTracks: [
-        {name: 'White Stocking Tops', artist: 'Demented Scumcats', album: 'Splatter Baby', id: '3', uri: ''},
-        {name: 'Cold Water', artist: 'Protest the Hero', album: 'Pacific Myth', id: '4', uri: ''},
-        {name: 'Time', artist: 'Benny Benassi', album: 'Hypnotica', id: '5', uri: ''}
-      ]
+      playlistTracks: []
     }
     // Bind Methods
     this.addTrack = this.addTrack.bind(this);
@@ -33,15 +26,16 @@ class App extends React.Component {
   
   /* Add Track */
   addTrack(track) {
+    let tracks = this.state.playlistTracks;
     // Check if track is already in playlist
-    if (this.state.playlistTracks.find(savedTrack => savedTrack.id === track.id)) {
+    if (tracks.find(savedTrack => savedTrack.id === track.id)) {
       return;
-    } else {
-    // Update State with Added Track
-      this.setState(prevState => ({
-        playlistTracks: [...prevState.playlistTracks, {name: track.name, artist: track.artist, album: track.album, id: track.id}]
-      }))
     }
+    // Update State with Added Track
+      tracks.push(track);
+      this.setState({
+        playlistTracks: tracks
+      })
   };
 
   /* Remove Track */
@@ -70,7 +64,12 @@ class App extends React.Component {
 
   /* Search */
   search(term) {
-    console.log(term);
+    Spotify.search(term)
+    .then(searchResults => {
+      this.setState({
+        searchResults: searchResults
+      })
+    })
   };
 
   render() {
