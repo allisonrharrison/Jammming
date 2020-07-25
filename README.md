@@ -37,3 +37,7 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 ### Part 8
 
 - Hook Up Search Bar to Spotify Search
+
+### Part 9
+
+- Obtain a Spotify Access Token
