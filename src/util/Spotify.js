@@ -1,5 +1,5 @@
 const CLIENT_ID = "7d182cb9c53a4e3e8c613d68dfb33199";
-const REDIRECT_URI = "http://localhost:3000/";
+const REDIRECT_URI = "http://special-instrument.surge.sh";
 
 let accessToken;
 
