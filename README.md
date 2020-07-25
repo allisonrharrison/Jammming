@@ -41,3 +41,7 @@ Following along with Codecademy's "Jammming" project- a React app which utilises
 ### Part 9
 
 - Obtain a Spotify Access Token
+
+### Part 10
+
+- Implement a Spotify Search Request
