@@ -1,5 +1,5 @@
 const CLIENT_ID = "7d182cb9c53a4e3e8c613d68dfb33199";
-const REDIRECT_URI = "http://arrogant-step.surge.sh";
+const REDIRECT_URI = "https://allisonrharrison.github.io/Jammming/";
 
 let accessToken;
 
